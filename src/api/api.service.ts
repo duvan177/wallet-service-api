@@ -10,7 +10,6 @@ export class ApiService {
     try {
         const url = `${process.env.DB_SERVICE_URL || 'http://localhost:5100'}/${path}`;
         const response = await firstValueFrom(this.httpService.post(url, data));
-        console.log(response);
         return response.data;
     } catch (error) {
         // console.error(error.response.data);
